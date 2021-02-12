@@ -11,7 +11,7 @@ def register(request):
 def forgot(request):
        return render(request,"forgot-password.html")
 def home(request):
-    return render(request,"main\index.html")
+    return render(request,"index.html")
 def family(request):
     return render(request,"family.html")
 def work(request):
