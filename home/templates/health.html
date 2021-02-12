@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <title>HEALTH</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<style>
+.post-list li
+{
+  padding:40px;
+  float:left;
+  width:28.5%;
+
+}
+img{
+  max-width=100%;
+  height=auto;
+}
+</style>
+<body>
+  <div class="jumbotron text-center" style="margin-bottom:0">
+  <h1>HEALTH</h1>
+</div>
+  <section class="health-buttons">
+  <ul class="post-list group">
+    <li class="group">
+      <i class="f1"></i>
+      <br><h5><b>Diet plan</b></h5>
+      <br>
+      <br>
+      <input type='file' onchange="readURL(this,'bla');" />
+<p></p>
+<img id="bla" src="http://placehold.it/280" alt="your image" width="280px" height="280px" />
+    </li>
+    <li class="group">
+      <i class="f2"></i>
+      <br><h5><b>Medical Consultation</b></h5>
+      <br>
+      <br>
+      <input type='file' onchange="readURL(this,'blh');" />
+<p></p>
+<img id="blh" src="http://placehold.it/280" alt="your image" width="280px" height="280px"/>
+    </li>
+    <li class="group">
+      <i class="f3"></i>
+      <br><h5><b>Lab Reports</b></h5>
+      <br>
+      <br>
+      <input type='file' onchange="readURL(this,'bah');" />
+<p></p>
+<img id="bah" src="http://placehold.it/280" alt="your image" width="280px" height="280px" />
+    </li>
+  </ul>
+</section>
+
+<!-- partial -->
+<script>
+function readURL(input,id) {
+              if (input.files && input.files[0]) {
+                  var reader = new FileReader();
+
+                  reader.onload = function (e) {
+                    if(id=='bla')
+                      $('#bla').attr('src', e.target.result);
+                    if(id=='blh')
+                      $('#blh')
+                              .attr('src', e.target.result);
+                    if(id=='bah')
+                      $('#bah')
+                              .attr('src', e.target.result);
+                  };
+
+                  reader.readAsDataURL(input.files[0]);
+              }
+          }
+</script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	    <title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+      {% load static %}
+      <img src="{% static 'personalassistant.png' %}" alt="My image">
+    </head>
+    <style>
+    .container {
+    	width: 1200px;
+    	margin: 0 auto;
+    }
+
+    body {
+        margin: 0px;
+    }
+
+    .banner-pic img {
+    	position: relative;
+        margin-left: auto;
+        margin-right: auto;
+    	display: block;
+    	width: 100%;
+    	object-fit: cover;
+    	height: 20px;
+    	opacity: 0.7;
+    }
+
+    .nav {
+    	text-align: right;
+        position: absolute;
+    		top: 4%;
+            left: 80%;
+    }
+
+    .nav ul li {
+        display: inline-block;
+    	padding: 7px 30px;
+    }
+
+    .nav ul li a {
+        color: black;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .nav ul li a:hover {
+    	color:blue;
+    }
+
+
+    .about-us {
+    	color: black;
+    	text-align: center;
+    	font-family:Montserrat;
+    	margin:0 auto;
+    	position: absolute;
+            top: 80%;
+            left: 50%;
+    	font-size: 60px;
+    	transform: translate(-50%, -50%);
+    }
+
+    .section {
+    	margin: 0x,y;
+    	padding:50px;
+    	font-family:Verdana;
+    	font-weight:100;
+    	text-align:center;
+    	color: #8b898a;
+    	font-size:17px;
+    }
+
+    .pp {
+    	margin-left:20%;
+    	margin-right:auto;
+    	width: 870px;
+    	height: 50px;
+    	text-align: center;
+    }
+
+    label {
+    	display: block;
+    	font-size: 18px;
+    	color:black;
+    	font-family:Verdana;
+    	font-weight:100;
+    }
+
+    .left ul,
+    .right ul {
+    	list-style-type: none;
+        margin-top:20px;
+    	margin-left:20px;
+    	padding:0px;
+        display:inline-block;
+    }
+
+    .left ul li,
+    .right ul li {
+        display: inline-block;
+    	padding: 10px 25px;
+    }
+
+    .left ul li a,
+    .right ul li a {
+        color: black;
+    	float: left;
+    	padding:20px;
+    	font-size: 14px;
+    	font-weight: 100;
+    	font-family:Verdana;
+    }
+
+    .right {
+    	float: right;
+    	text-align:right;
+
+    }
+</style>
+    <body>
+
+        <section class="banner clearfix">
+    	    <div class="banner-pic">
+    		    <img src="personalassistant.png" class="image">
+				<div class="about-us">Personal Assistant</div>
+    	    </div>
+        </section>
+
+		<section class="header clearfix">
+    	    <div class="container">
+    	        <div class="nav">
+    		        <ul>
+						<li><a href="#">Events</a></li>
+						<li><a href={% url 'login' %}>Login</a></li>
+    		        </ul>
+				</div>
+			</div>
+        </section>
+
+		<section class="section">
+				<label for="">About Us</label>
+				<br>
+				<p class="pp">	The modern working professional plays so many roles in a day. This PA is made for the busiest professional
+				of the modern day. It helps bring the order to the daily routine.This is a functional prototype that renders equally well
+				on these browsers - Microsoft Edge, Google Chrome, Mozilla Firefox, and Apple Safari. There are 3 default facets of life
+				namely Work,Home,Health incorporated into the web application. Instead of having multiple to-do lists all over the place,
+				this web application has reminders,your task progress tracker,your shopping lists,your diet plans and much more.
+				</p>
+		</section>
+
+        <section class="footer">
+	        <div class="container">
+		        <div class="left">
+			        <ul>
+						<li><a href="#">About Us</a></li>
+						<li><a href="#">Contact Us</a></li>
+						<li><a href="#">Terms & Conditions</a></li>
+					</ul>
+		            <div class="right">
+						<ul>
+							<li><a href="#">Twitter</a></li>
+							<li><a href="#">Facebook</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+        </section>
+
+	</body>
+</html>

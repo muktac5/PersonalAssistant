@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Personal Assistant</title>
+
+    <!-- Custom fonts for this template-->
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'sb-admin-2.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'all.min.css' %}">
+    <script src="{% static 'sb-admin-2.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'chart-area-demo.js' %}" type="text/javascript"></script>
+    <script src="{% static 'chart-pie-demo.js' %}" type="text/javascript"></script>
+    <script src="{% static 'datables-demo.js' %}" type="text/javascript"></script>
+    <script src="{% static 'bootstrap.bundle.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'Chart.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'jquery.easing.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'jquey.min.js' %}" type="text/javascript"></script>
+    </head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">Mukta Maddipatla</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+                    <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+
+                        <!-- Nav Item - Alerts -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bell fa-fw"></i>
+                                <!-- Counter - Alerts -->
+                                <span class="badge badge-danger badge-counter">3+</span>
+                            </a>
+                            <!-- Dropdown - Alerts -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="alertsDropdown">
+                                <h6 class="dropdown-header">
+                                    Alerts Center
+                                </h6>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-primary">
+                                            <i class="fas fa-file-alt text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 12, 2019</div>
+                                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-success">
+                                            <i class="fas fa-donate text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 7, 2019</div>
+                                        $290.29 has been deposited into your account!
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-warning">
+                                            <i class="fas fa-exclamation-triangle text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 2, 2019</div>
+                                        Spending Alert: We've noticed unusually high spending for your account.
+                                    </div>
+                                </a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                            </div>
+                        </li>
+
+                        <!-- Nav Item - Messages -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-envelope fa-fw"></i>
+                                <!-- Counter - Messages -->
+                                <span class="badge badge-danger badge-counter">7</span>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="messagesDropdown">
+                                <h6 class="dropdown-header">
+                                    Message Center
+                                </h6>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="undraw_profile_1.svg"
+                                            alt="">
+                                        <div class="status-indicator bg-success"></div>
+                                    </div>
+                                    <div class="font-weight-bold">
+                                        <div class="text-truncate">Hi there! I am wondering if you can help me with a
+                                            problem I've been having.</div>
+                                        <div class="small text-gray-500">Emily Fowler · 58m</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="undraw_profile_2.svg"
+                                            alt="">
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">I have the photos that you ordered last month, how
+                                            would you like them sent to you?</div>
+                                        <div class="small text-gray-500">Jae Chun · 1d</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="undraw_profile_3.svg"
+                                            alt="">
+                                        <div class="status-indicator bg-warning"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">Last month's report looks great, I am very happy with
+                                            the progress so far, keep up the good work!</div>
+                                        <div class="small text-gray-500">Morgan Alvarez · 2d</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
+                                            alt="">
+                                        <div class="status-indicator bg-success"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">Am I a good boy? The reason I ask is because someone
+                                            told me that people say this to all dogs, even if they aren't good...</div>
+                                        <div class="small text-gray-500">Chicken the Dog · 2w</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+                            </div>
+                        </li>
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Mukta Maddipatla</span>
+                                <img class="img-profile rounded-circle"
+                                    src="undraw_profile_3.svg">
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                    </div>
+
+                    <!-- Content Row -->
+
+                    <div class="row">
+
+                        <!-- Area Chart -->
+                        <div class="col-xl-8 col-lg-7">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Work Hours Overview</h6>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="chart-area">
+                                        <canvas id="myAreaChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pie Chart -->
+                        <div class="col-xl-4 col-lg-5">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Tasks</h6>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                            aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">View</div>
+                                            <a class="dropdown-item" href="#">Family Tasks</a>
+                                            <a class="dropdown-item" href="#">Work Tasks</a>
+                                            <a class="dropdown-item" href="#">Health Tasks</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="chart-pie pt-4 pb-2">
+                                        <canvas id="myPieChart"></canvas>
+                                    </div>
+                                    <div class="mt-4 text-center small">
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle text-primary"></i> Completed
+                                        </span>
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle text-light"></i> Pending
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div >
+
+                    <!-- Content Row -->
+                    <div class = "row">
+                        <div class="col-lg-6 mb-4">
+                        <a href={% url 'work' %} class="btn btn-primary btn-icon-split">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-arrow-right"></i>
+                                        </span>
+                                        <span class="text">Work</span>
+                            </a>
+
+
+                            <a href={% url 'family' %} class="btn btn-success btn-icon-split">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-arrow-right"></i>
+                                        </span>
+                                        <span class="text">Family</span>
+                            </a>
+
+                            <a href={% url 'health' %} class="btn btn-info btn-icon-split">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-arrow-right"></i>
+                                        </span>
+                                        <span class="text">Health</span>
+                            </a>
+
+                            <a href="#" class="btn btn-success btn-circle">
+                                        <i class="fas fa-plus"></i>
+                            </a>
+                            <div class="my-2"></div>
+                    </div>
+                </div>
+                    <div class="my-2"></div>
+
+                    <div class="row">
+
+                        <!-- Content Column -->
+                        <div class="col-lg-6 mb-4">
+
+
+
+                            <!-- Project Card Example -->
+                            <div class="card shadow mb-4">
+                                <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                                    <h6 class="m-0 font-weight-bold text-primary">Tasks For Today </h6>
+                                </a>
+
+                                <div class="card-body" id="collapseCardExample">
+                                    <table id="todo-table"></table>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-6 mb-4">
+
+
+                            <!-- Project Card Example -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Water consumption</h6>
+                                </div>
+                                <div class="card-body">
+                                    <button id = "water-count-increment" class="btn btn-success btn-circle btn-lg">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                                                                    <div class="my-2"></div>
+                                    <div class="row no-gutters align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800" id="water-count">50%</div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="progress progress-sm mr-2">
+                                                        <div id = "water-count-progress-bar" class="progress-bar bg-info" role="progressbar"
+                                                            style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                </div>
+                            </div>
+                    </div>
+
+                    <style>
+                      html, body {
+                    	 width: 100%;
+                    	 height: 100%;
+                    }
+                     body {
+                    	 background: #f5f7fa;
+                    	 padding: 40px 0;
+                    	 box-sizing: border-box;
+                    	 font-family: Montserrat, "sans-serif";
+                    	 color: #51565d;
+                    }
+                     .calendar {
+                    	 display: grid;
+                    	 width: 100%;
+                    	 grid-template-columns: repeat(7, minmax(120px, 1fr));
+                    	 grid-template-rows: 50px;
+                    	 grid-auto-rows: 120px;
+                    	 overflow: auto;
+                    }
+                     .calendar-container {
+                    	 width: 90%;
+                    	 margin: auto;
+                    	 overflow: hidden;
+                    	 box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+                    	 border-radius: 10px;
+                    	 background: #fff;
+                    	 max-width: 1200px;
+                    }
+                     .calendar-header {
+                    	 text-align: center;
+                    	 padding: 20px 0;
+                    	 background: linear-gradient(to bottom, #fafbfd 0%, rgba(255, 255, 255, 0) 100%);
+                    	 border-bottom: 1px solid rgba(166, 168, 179, 0.12);
+                    }
+                     .calendar-header h1 {
+                    	 margin: 0;
+                    	 font-size: 18px;
+                    }
+                     .calendar-header p {
+                    	 margin: 5px 0 0 0;
+                    	 font-size: 13px;
+                    	 font-weight: 600;
+                    	 color: rgba(81, 86, 93, .4);
+                    }
+                     .calendar-header button {
+                    	 background: 0;
+                    	 border: 0;
+                    	 padding: 0;
+                    	 color: rgba(81, 86, 93, .7);
+                    	 cursor: pointer;
+                    	 outline: 0;
+                    }
+                     .day {
+                    	 border-bottom: 1px solid rgba(166, 168, 179, 0.12);
+                    	 border-right: 1px solid rgba(166, 168, 179, 0.12);
+                    	 text-align: right;
+                    	 padding: 14px 20px;
+                    	 letter-spacing: 1px;
+                    	 font-size: 12px;
+                    	 box-sizing: border-box;
+                    	 color: #98a0a6;
+                    	 position: relative;
+                    	 pointer-events: none;
+                    	 z-index: 1;
+                    }
+                     .day:nth-of-type(7n + 7) {
+                    	 border-right: 0;
+                    }
+                     .day:nth-of-type(n + 1):nth-of-type(-n + 7) {
+                    	 grid-row: 2;
+                    }
+                     .day:nth-of-type(n + 8):nth-of-type(-n + 14) {
+                    	 grid-row: 3;
+                    }
+                     .day:nth-of-type(n + 15):nth-of-type(-n + 21) {
+                    	 grid-row: 4;
+                    }
+                     .day:nth-of-type(n + 22):nth-of-type(-n + 28) {
+                    	 grid-row: 5;
+                    }
+                     .day:nth-of-type(n + 29):nth-of-type(-n + 35) {
+                    	 grid-row: 6;
+                    }
+                     .day:nth-of-type(7n + 1) {
+                    	 grid-column: 1;
+                    }
+                     .day:nth-of-type(7n + 2) {
+                    	 grid-column: 1;
+                    }
+                     .day:nth-of-type(7n + 3) {
+                    	 grid-column: 1;
+                    }
+                     .day:nth-of-type(7n + 4) {
+                    	 grid-column: 1;
+                    }
+                     .day:nth-of-type(7n + 5) {
+                    	 grid-column: 1;
+                    }
+                     .day:nth-of-type(7n + 6) {
+                    	 grid-column: 1;
+                    }
+                     .day:nth-of-type(7n + 7) {
+                    	 grid-column: 1;
+                    }
+                     .day-name {
+                    	 font-size: 12px;
+                    	 text-transform: uppercase;
+                    	 color: #99a1a7;
+                    	 text-align: center;
+                    	 border-bottom: 1px solid rgba(166, 168, 179, 0.12);
+                    	 line-height: 50px;
+                    	 font-weight: 500;
+                    }
+                     .day--disabled {
+                    	 color: rgba(152, 160, 166, 0.6);
+                    	 background-color: #fff;
+                    	 background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23f9f9fa' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+                    	 cursor: not-allowed;
+                    }
+                     .task {
+                    	 border-left-width: 3px;
+                    	 padding: 8px 12px;
+                    	 margin: 10px;
+                    	 border-left-style: solid;
+                    	 font-size: 14px;
+                    	 position: relative;
+                    }
+                     .task--warning {
+                    	 border-left-color: #fdb44d;
+                    	 grid-column: 4 / span 3;
+                    	 grid-row: 3;
+                    	 background: #fef0db;
+                    	 align-self: center;
+                    	 color: #fc9b10;
+                    	 margin-top: -5px;
+                    }
+                     .task--danger {
+                    	 border-left-color: #fa607e;
+                    	 grid-column: 2 / span 3;
+                    	 grid-row: 3;
+                    	 margin-top: 15px;
+                    	 background: rgba(253, 197, 208, 0.7);
+                    	 align-self: end;
+                    	 color: #f8254e;
+                    }
+                     .task--info {
+                    	 border-left-color: #4786ff;
+                    	 grid-column: 6 / span 2;
+                    	 grid-row: 5;
+                    	 margin-top: 15px;
+                    	 background: rgba(218, 231, 255, 0.7);
+                    	 align-self: end;
+                    	 color: #0a5eff;
+                    }
+                     .task--primary {
+                    	 background: #4786ff;
+                    	 border: 0;
+                    	 border-radius: 4px;
+                    	 grid-column: 3 / span 3;
+                    	 grid-row: 4;
+                    	 align-self: end;
+                    	 color: #fff;
+                    	 box-shadow: 0 10px 14px rgba(71, 134, 255, 0.4);
+                    }
+                     .task__detail {
+                    	 position: absolute;
+                    	 left: 0;
+                    	 top: calc(100% + 10px);
+                    	 background: #fff;
+                    	 border: 1px solid rgba(166, 168, 179, 0.2);
+                    	 color: #000;
+                    	 padding: 20px;
+                    	 box-sizing: border-box;
+                    	 border-radius: 4px;
+                    	 box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+                    	 z-index: 2;
+                    }
+                     .task__detail:after, .task__detail:before {
+                    	 bottom: 100%;
+                    	 left: 30%;
+                    	 border: solid transparent;
+                    	 content: " ";
+                    	 height: 0;
+                    	 width: 0;
+                    	 position: absolute;
+                    	 pointer-events: none;
+                    }
+                     .task__detail:before {
+                    	 border-bottom-color: rgba(166, 168, 179, 0.2);
+                    	 border-width: 8px;
+                    	 margin-left: -8px;
+                    }
+                     .task__detail:after {
+                    	 border-bottom-color: #fff;
+                    	 border-width: 6px;
+                    	 margin-left: -6px;
+                    }
+                     .task__detail h2 {
+                    	 font-size: 15px;
+                    	 margin: 0;
+                    	 color: #51565d;
+                    }
+                     .task__detail p {
+                    	 margin-top: 4px;
+                    	 font-size: 12px;
+                    	 margin-bottom: 0;
+                    	 font-weight: 500;
+                    	 color: rgba(81, 86, 93, .7);
+                    }
+                    </style>
+
+
+                    <div class="calendar-container">
+                        <div class="calendar-header">
+                            <h1> November<button>▾</button></h1>
+                            <p>2018</p>
+                        </div>
+                        <div class="calendar"><span class="day-name">Mon</span><span class="day-name">Tue</span><span class="day-name">Wed</span><span class="day-name">Thu</span><span class="day-name">Fri</span><span class="day-name">Sat</span><span class="day-name">Sun</span>
+                            <div class="day day--disabled">30</div>
+                            <div class="day day--disabled">31</div>
+                            <div class="day">1</div>
+                            <div class="day">2</div>
+                            <div class="day">3</div>
+                            <div class="day">4</div>
+                            <div class="day">5</div>
+                            <div class="day">6</div>
+                            <div class="day">7</div>
+                            <div class="day">8</div>
+                            <div class="day">9</div>
+                            <div class="day">10</div>
+                            <div class="day">11</div>
+                            <div class="day">12</div>
+                            <div class="day">13</div>
+                            <div class="day">14</div>
+                            <div class="day">15</div>
+                            <div class="day">16</div>
+                            <div class="day">17</div>
+                            <div class="day">18</div>
+                            <div class="day">19</div>
+                            <div class="day">20</div>
+                            <div class="day">21</div>
+                            <div class="day">22</div>
+                            <div class="day">23</div>
+                            <div class="day">24</div>
+                            <div class="day">25</div>
+                            <div class="day">26</div>
+                            <div class="day">27</div>
+                            <div class="day">28</div>
+                            <div class="day">29</div>
+                            <div class="day">30</div>
+                            <div class="day">31</div>
+                            <div class="day day--disabled">1</div>
+                            <div class="day day--disabled">2</div>
+                            <section class="task task--warning">Projects</section>
+                            <section class="task task--danger">Design Sprint</section>
+                            <section class="task task--primary">Product Checkup 1<div class="task__detail">
+                                    <h2>Product Checkup 1</h2>
+                                    <p>15-17th November</p>
+                                </div>
+                            </section>
+                            <section class="task task--info">Product Checkup 2</section>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<style type="text/css">
+    .td1{
+        width: 90%;
+    }
+    .td2{
+        width: 10%;
+    }
+    #todo-table{
+        width:100%;
+    }
+
+    @daywidth: 5px;
+
+    //from bootstrap variables:
+
+    @state-success-text: #3c763d;
+    @state-success-bg: #dff0d8;
+    @state-info-text: #31708f;
+    @state-info-bg: #d9edf7;
+    @state-warning-text: #8a6d3b;
+    @state-warning-bg: #fcf8e3;
+    @state-danger-text: #a94442;
+    @state-danger-bg: #f2dede;
+
+    .calendar-day {
+      width: 3px;
+      min-width: 3px;
+      max-width: 3px;
+      height: 20px;
+    }
+    .calendar-table { margin: 0 auto; width: @daywidth * 7;}
+
+    .selected { background-color: #eee;}
+    .outside .date {color: #ccc; }
+    .timetitle {
+        white-space: nowrap;
+        text-align: right;
+    }
+
+    .colors(@color, @text) {
+            @top: @color;
+            @border: darken(@color, 15%);
+            @bottom: darken(@color, 7.5%);
+            border-top: 1px solid @border;
+            border-bottom: 1px solid @border;
+            background-image: linear-gradient(to bottom, @top 0px, @bottom 100%);
+            background-repeat: repeat-x;
+            color: @text;
+            border-width: 1px;
+
+            &.begin {
+              border-left: 1px solid @border;
+              border-top-left-radius: 4px;
+              border-bottom-left-radius: 4px; }
+            &.end {
+              border-right: 1px solid @border;
+              border-top-right-radius: 4px;
+              border-bottom-right-radius: 4px;
+            }
+    }
+
+    .event {
+            .colors(@state-success-bg, @state-success-text);
+            font-size: .75em;
+            padding: 0 .75em;
+            line-height: 2em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 1px;
+            &.all-day { .colors(@state-info-bg, @state-info-text); }
+            &.clear { background: none; border: 1px solid transparent; }
+    }
+
+
+    .cell-styles(@ruleset) {
+      & > thead > tr, & > tbody > tr, & > tfoot > tr {
+          & > th, & > td {
+            @ruleset();
+          }
+        }
+    }
+
+    .table-tight {
+      .cell-styles({ padding-left: 0; padding-right: 0; });
+    }
+    .table-tight-vert {
+      .cell-styles({ padding-top: 0; padding-bottom: 0; });
+}
+</style>t
+
+</html>

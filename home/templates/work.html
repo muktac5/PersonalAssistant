@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>WORK</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<style>
+.bla{
+  float:left;
+  padding:40px;
+  width:28.45%;
+}
+icon{
+  border-style:solid;
+}
+</style>
+<body>
+  <div class="jumbotron text-center" style="margin-bottom:auto">
+  <h1>WORK</h1>
+  <br>
+  <br>
+    <div class="bla">
+    <label for="projectname">Project name:</label>
+    <input type="text" id="projectname" name="projectname"><br><br>
+    <textarea id="place" placeholder="Notes" rows="20" name="comment[text]" id="comment_text" cols="40" class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"></textarea>
+    </div>
+    <div class="bla">
+      <label for="projectname">Project name:</label>
+      <input type="text" id="projectname" name="projectname"><br><br>
+      <textarea id="place" placeholder="Notes" rows="20" name="comment[text]" id="comment_text" cols="40" class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"></textarea>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="bla">
+      <button id="icon"><img src="plusicon.png" width=120px height=120px></button>
+    <script>
+    var enterButton=document.getElementById("icon");
+    function createTextArea() {
+    length = document.getElementsByClassName('bla').length;
+    var element = document.getElementsByClassName('bla')[length -1];
+    var div = document.getElement('div');
+    var label = document.createElement('label');
+    label.htmlFor = 'projectname';
+    label.html = 'Project name: '
+    div.appendChild(label);
+    var input = document.createElement('input');
+    input.id = "projectname";
+    input.name = "projectname";
+    div.appendChild(input);
+    var br1 = document.createElement("BR");
+    br1.classList.add("bla");
+    var br2 = document.createElement("BR")
+    br2.classList.add("bla");
+    div.appendChild(br1);
+    div.appendChild(br2);
+    var textarea = document.createElement('textarea');
+    textarea.id = "place";
+    textarea.placeholder = "Notes";
+    textarea.rows = 20;
+    textarea.cols = 40;
+    // textarea.classList.add("ui-autocomm"); check the class name; not visible in the pic
+    div.appendChild(textarea);
+    element.append(div);
+    }
+    enterButton.addEventListener("click",createTextArea);
+</script>
+</body>
+</html>
