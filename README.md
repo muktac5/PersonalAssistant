@@ -32,3 +32,7 @@ List of things to be repaired
 Features that can be added in the further development of this web application are:
 1.Voice assistant: to make the application hands free and thus user friendly. 
 2.This web application can be made into an android/ios app which will gurantee more usage among people.
+
+
+
+Run command: python manage.py runserver
